@@ -11,7 +11,14 @@ if ($_POST['form'] == "signup") {
     mysqli_query($conn, "INSERT INTO users(full_name, email, username, password) VALUES ('$full_name', '$email', '$username', '$password'); ");
     $authed = $_SESSION['authed'] = true;
 } else {
-    $authed = $_SESSION['authed'] = true;
+    $query = mysqli_query($conn, "SELECT * FROM users WHERE username='$username' AND password='$password'; ");
+    if (mysqli_num_rows($query) > 0) {
+        $user = $_SESSION['user'] = mysqli_fetch_assoc($query);
+        $authed = $_SESSION['authed'] = true;
+        echo "<pre>";var_dump($user);echo"</pre>";
+    } else {
+        echo "Nein";
+    }
 }
 
 

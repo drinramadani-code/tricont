@@ -1,0 +1,28 @@
+<?php include 'dbh.php'; ?>
+<div class="dashboard">
+    <div class="dashboard-events">
+        <?php 
+            $user = $_SESSION['user'];
+            $events_sql = "SELECT * FROM events; ";
+            $events_result = mysqli_query($conn, $events_sql);
+            if (mysqli_num_rows($events_result) > 0) {
+                while ($event = mysqli_fetch_assoc($events_result)) {
+                    if (in_array($user['id'], explode(", ", $event['event_participants']))) {
+                    ?>
+                    <div class="dashboard-events-single">
+                        <div class="dashboard-events-single-wrapper">
+                            <div class="dashboard-events-single-wrapper-left">
+                                <h3><?php echo $event['event_name']; ?></h3>
+                            </div>
+                            <div class="dashboard-events-single-wrapper-right">
+                                <i class="fa fa-user"></i><span>(<?php echo count(explode(", ", $event['event_participants'])); ?>)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
+                    }
+                }
+            }
+        ?>
+    </div>
+</div>

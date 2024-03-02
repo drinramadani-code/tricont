@@ -16,7 +16,7 @@
         if (!isset($_SESSION['authed'])) {
             include 'user/auth_form.php';
         } else {
-            
+            include 'dashboard/index.php';
         }
     ?>
 
