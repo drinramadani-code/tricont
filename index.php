@@ -16,7 +16,11 @@
         if (!isset($_SESSION['authed'])) {
             include 'user/auth_form.php';
         } else {
-            include 'dashboard/index.php';
+            if (isset($_GET['t'])) {
+                include 'dashboard/cek/index.php';
+            } else {
+                include 'dashboard/index.php';
+            }
         }
     ?>
 

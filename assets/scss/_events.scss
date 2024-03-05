@@ -2,6 +2,8 @@
     &-events {
         padding: 10px;
         &-single {
+            display: block;
+            text-decoration: none;
             max-width: 100% !important;
             background-color: #f9f9f9;
             border: 2px solid black;
@@ -27,4 +29,8 @@
             }
         }
     }
+}
+
+.cek {
+    
 }

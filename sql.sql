@@ -4,7 +4,7 @@ CREATE TABLE options (
     option_value VARCHAR(256) NOT NULL
 );
 
-INSERT INTO options (option_name, option_value) VALUES ('Permalink', 'http://localhost:8080/tricont/');
+INSERT INTO options (option_name, option_value) VALUES ('Permalink', 'http://localhost/tricont/');
 
 CREATE TABLE users (
     id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,

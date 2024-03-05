@@ -18,8 +18,8 @@
                 password: password
             },
             success: function(data) {
-                console.log(data);
-                // location.reload();
+                // console.log(data);
+                location.reload();
             }
         })
     })

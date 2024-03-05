@@ -5,7 +5,7 @@
   endif;
   $entrie_options = [5, 10, 25, 50, 100];
 
-  $server_name = "localhost:3306";
+  $server_name = "localhost";
   $db_username = "root";
   $db_password = "";
   $db_name = "tricont";
