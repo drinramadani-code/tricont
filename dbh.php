@@ -25,3 +25,10 @@
   if (!$conn){
     die("Connection failed: " .mysqli_connect_error());
   }
+
+  if(!function_exists("getUser")) {
+    function getUser($id) {
+      global $conn;
+      return mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM users WHERE id=$id;"));
+    }
+  }

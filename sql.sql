@@ -33,3 +33,16 @@ CREATE TABLE cek (
 )
 
 INSERT INTO cek (event_id, cek_name, cek_price, paid_by) VALUES (1, 'Dark me 02/03/2024', '115.5', '2');
+
+CREATE TABLE expenses (
+    id INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    cek_id INT(11) NOT NULL,
+    title VARCHAR(256) NOT NULL,
+    amount VARCHAR(256) NOT NULL,
+    date VARCHAR(256) NOT NULL,
+    paid_by INT(11) NOT NULL,
+    for_whom VARCHAR(256) NOT NULL
+);
+
+INSERT INTO expenses (cek_id, title, amount, date, paid_by, for_whom) VALUES (1, 'Picnic', '14.5', '05/03/2024', 2, '2, 4, 5');
+INSERT INTO expenses (cek_id, title, amount, date, paid_by, for_whom) VALUES (1, 'Gas', '50', '06/03/2024', 2, '2, 4, 5');
