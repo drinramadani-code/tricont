@@ -32,3 +32,4 @@
       return mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM users WHERE id=$id;"));
     }
   }
+?>

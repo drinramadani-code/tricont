@@ -20,7 +20,7 @@ $participants = rtrim($participants, ', ');
 		<div class="cek-body-single">
 			<div class="cek-body-single-left">
 				<div class="cek-body-single-left-title"><?php echo $expense['title'] ?></div>
-				<div class="cek-body-single-left-paid-by">paid by — <?php echo explode(" ", getUser($expense['paid_by'])['full_name'])[0]; ?></div>
+				<div class="cek-body-single-left-paid-by">paid by &mdash; <?php echo explode(" ", getUser($expense['paid_by'])['full_name'])[0]; ?></div>
 			</div>
 			<div class="cek-body-single-right">
 				<div class="cek-body-single-right-price"><?php echo $expense['amount'] ?>€</div>
@@ -31,7 +31,7 @@ $participants = rtrim($participants, ', ');
 	</div>
 	<div class="cek-footer">
 		<div class="cek-footer-my-total"></div>
-		<div class="cek-footer-plus">+</div>
+		<div class="cek-footer-plus"><a href="<?php echo $_SESSION['permalink']; ?>?t=1&a">+</a></div>
 		<div class="cek-footer-total-expenses"></div>
 	</div>
 </div>

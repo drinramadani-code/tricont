@@ -23,6 +23,19 @@
             }
         })
     })
+    let for_who = [];
+    $('input[name="p"]').change(function() {
+        console.log($(this).prop('checked'));
+        if ($(this).prop('checked')) {
+            for_who.push($(this).val())
+        } else {
+            var index = for_who.indexOf($(this).val());
+            if (index !== -1) {
+                for_who.splice(index, 1);
+            }
+        }
+        $('input[name="for_who"]').val(for_who);
+    })
     $('.auth-container-signup-form-btn').click(function() {
         let username = $('.auth-container-signup-form-field-username > input').val();
         let password = $('.auth-container-signup-form-field-password > input').val();

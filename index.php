@@ -17,7 +17,11 @@
             include 'user/auth_form.php';
         } else {
             if (isset($_GET['t'])) {
-                include 'dashboard/cek/index.php';
+                if (isset($_GET['a'])) {
+                    include 'dashboard/cek/add.php';
+                } else {
+                    include 'dashboard/cek/index.php';
+                }
             } else {
                 include 'dashboard/index.php';
             }

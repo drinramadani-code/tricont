@@ -50,3 +50,16 @@
         justify-content: center;
     }
 }
+
+.AddCek {
+    form {
+        input {
+            display: block;
+            width: 100% !important;
+            margin: 10px 0;
+            &.hidden_field {
+                display: none;
+            }
+        }
+    }
+}
