@@ -46,3 +46,11 @@ CREATE TABLE expenses (
 
 INSERT INTO expenses (cek_id, title, amount, date, paid_by, for_whom) VALUES (1, 'Picnic', '14.5', '05/03/2024', 2, '2, 4, 5');
 INSERT INTO expenses (cek_id, title, amount, date, paid_by, for_whom) VALUES (1, 'Gas', '50', '06/03/2024', 2, '2, 4, 5');
+
+CREATE TABLE owes (
+    id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    owes INT(11) NOT NULL,
+    who INT(11) NOT NULL,
+    total VARCHAR(256) NOT NULL,
+    expense_id INT(11) NOT NULL
+);

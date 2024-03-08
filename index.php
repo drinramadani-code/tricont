@@ -23,7 +23,11 @@
                     include 'dashboard/cek/index.php';
                 }
             } else {
-                include 'dashboard/index.php';
+                if (isset($_GET['c'])) {
+                    include 'dashboard/expenses/single.php';
+                } else {
+                    include 'dashboard/index.php';
+                }
             }
         }
     ?>
