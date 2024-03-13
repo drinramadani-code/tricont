@@ -1,6 +1,8 @@
 <?php include 'dbh.php'; ?>
 <div class="dashboard">
-    <?php  ?>
+    <div class="dashboard-header">
+        <img src="assets/images/logo.png" alt="">
+    </div>
     <div class="dashboard-events">
         <?php 
             $user = $_SESSION['user'];
@@ -18,6 +20,7 @@
                             <div class="dashboard-events-single-wrapper-right">
                                 <i class="fa fa-user"></i><span>(<?php echo count(explode(", ", $event['event_participants'])); ?>)</span>
                             </div>
+                            <i class="dashboard-events-single-wrapper-arrow fa fa-angle-right"></i>
                         </div>
                     </a>
                     <?php
