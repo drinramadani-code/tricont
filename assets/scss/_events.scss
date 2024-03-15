@@ -131,15 +131,68 @@
         justify-content: center;
         min-height: 50px;
         background-color: #272727;
+        padding: 10px;
+        &-plus {
+            width: fit-content;
+            a {
+                background-color: #86A1BD;
+                color: #fff;
+                text-decoration: none;
+                border-radius: 100%;
+                padding: 10px 20px;
+                font-size: 30px;
+            }
+        }
+        &-my-total, &-total-expenses {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+            &-gray {
+                color: #7c7c7c;
+                margin-bottom: 0;
+            }
+            &-amount {
+                color: #FFF;
+            }
+        }
+        &-my-total {
+            flex: 1;
+            align-items: flex-start;
+        }
     }
 }
 
 .AddCek {
+    &-header {
+        background-color: #272727;
+        padding: 10px 20px;
+        display: flex;
+        gap: 50px;
+        align-items: center;
+        justify-content: space-between;
+    
+        &-cancel {
+            a {
+                color: #eee;
+                display: flex;
+                gap: 5px;
+                align-items: center;
+                text-decoration: none;
+            }
+        }
+        &-name {
+            color: #FFF;
+            font-weight: 500;
+        }
+    }
     form {
+        background-color: #000;
         input {
             display: block;
             width: 100% !important;
-            margin: 10px 0;
+            // margin: 10px 0;
             &.hidden_field {
                 display: none;
             }

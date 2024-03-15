@@ -3,7 +3,7 @@
         display: flex;
         overflow-x: hidden;
         transition: .5s all ease-in-out;
-        background: linear-gradient(180deg, #ff930f 0%, #fff95b 100%);
+        background: linear-gradient(180deg, #272727 0%, #272727 100%);
         &-login, &-signup {
             transition: .5s all ease-in-out;
             min-width: 100vw;   
@@ -28,7 +28,7 @@
                     font-size: 40px;
                     font-weight: 800;
                     text-transform: uppercase;
-                    color: brown;
+                    color: #9ec0e4;
                 }
 
                 &-field {
@@ -39,21 +39,21 @@
                         border: none;
                         &[type="text"], &[type="password"], &[type="email"] {
                             background-color: transparent;
-                            border-bottom: 2px solid brown;
+                            border-bottom: 2px solid #9ec0e4;
                             outline: none !important;
                         }
                         &[type="submit"] {
                             padding: 10px 0;
                             font-size: 16px;
                             text-transform: uppercase;
-                            background-color: brown;
+                            background-color: #9ec0e4;
                             color: #fff;
-                            border: 1px solid brown;
+                            border: 1px solid #9ec0e4;
                             transition: .3s all ease-in-out;
                             font-weight: 600;
                             &:hover {
                                 background-color: #fff;
-                                color: brown;
+                                color: 9ec0e4;
                             }
                         }
                         

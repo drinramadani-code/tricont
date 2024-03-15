@@ -24,6 +24,7 @@ CREATE TABLE events (
 
 INSERT INTO events (event_name, event_items, event_participants, event_leader) VALUES ('Udhetimi ne Shqiperi', ' ', '2, 3', '2');
 
+
 CREATE TABLE cek (
     id INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
     event_id INT(11) NOT NULL,
@@ -54,3 +55,5 @@ CREATE TABLE owes (
     total VARCHAR(256) NOT NULL,
     expense_id INT(11) NOT NULL
 );
+
+INSERT INTO events (event_name, event_items, event_participants, event_leader) VALUES ('Daily Trip ne Shkup', ' ', '2, 4, 5', '2');

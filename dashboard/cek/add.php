@@ -6,9 +6,10 @@ $user = $_SESSION['user'];
 ?>
 <div class="AddCek">
 	<div class="AddCek-header">
-		<div class="AddCek-header-cancel"><a href="<?php echo $_SESSION['permalink']; ?>?t=<?php echo $_GET['t']; ?>">Cancel</a></div>
+		<div class="AddCek-header-cancel">
+			<a href="<?php echo $_SESSION['permalink']; ?>?t=<?php echo $_GET['t']; ?>"><i class="fa fa-angle-left"></i>Cancel</a>
+		</div>
 		<div class="AddCek-header-name">New expense</div>
-		<div class="AddCek-header-save">Save</div>
 	</div>
 	<form action="dashboard/cek/add_cek_logic.php" method="GET">
 		<input type="text" value="<?php echo $_GET['t']; ?>" name="cek_id" class="hidden_field"/>

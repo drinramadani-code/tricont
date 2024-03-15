@@ -19,6 +19,8 @@ $participants = rtrim($participants, ', ');
 	</div>
 	<!-- <br><br> -->
 	<div class="cek-body">
+		<?php $total_expenses = 0; ?>
+		<?php $my_total = 0; ?>
 		<?php $query = mysqli_query($conn, "SELECT * FROM expenses WHERE cek_id=".$cek['id']); ?>
 		<?php while ($expense = mysqli_fetch_assoc($query)) { ?>
 		<a class="cek-body-single" href="<?php echo $permalink; ?>?c=<?php echo $expense['id']; ?>">
@@ -31,11 +33,20 @@ $participants = rtrim($participants, ', ');
 				<div class="cek-body-single-right-date"><?php echo $expense['date'] ?></div>
 			</div>
 		</a>
+		<?php $total_expenses += floatval($expense['amount']); ?>
+		<?php $my_total += floatval($expense['amount'] / count(explode(",", $expense['for_whom']))); ?>
+		<?php // echo $expense['amount'] . " " . count(explode(",", $expense['for_whom'])); ?>
 		<?php } ?>
 	</div>
 	<div class="cek-footer">
-		<div class="cek-footer-my-total"></div>
-		<div class="cek-footer-plus"><a href="<?php echo $_SESSION['permalink']; ?>?t=1&a">+</a></div>
-		<div class="cek-footer-total-expenses"></div>
+		<div class="cek-footer-my-total">
+			<p class="cek-footer-my-total-gray">My Total</p>
+			<span class="cek-footer-my-total-amount"><?php echo number_format((float)$my_total, 2, '.', ''); ?>€</span>
+		</div>
+		<div class="cek-footer-plus"><a href="<?php echo $_SESSION['permalink']; ?>?t=<?php echo $_GET['t']; ?>&a">+</a></div>
+		<div class="cek-footer-total-expenses">
+			<p class="cek-footer-total-expenses-gray">TOTAL EXPENSES</p>
+			<span class="cek-footer-total-expenses-amount"><?php echo number_format((float)$total_expenses, 2, '.', ''); ?>€</span>
+		</div>
 	</div>
 </div>
