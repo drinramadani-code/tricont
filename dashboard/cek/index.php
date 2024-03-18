@@ -15,6 +15,7 @@ $participants = rtrim($participants, ', ');
 			<div class="cek-header-right-name"><?php echo $cek['event_name']; ?> </div>
 			<div class="cek-header-right-participants"><?php echo $participants; ?></div>
 		</div>
+		<a href="<?php echo $permalink; ?>?b=<?php echo $_GET['t']; ?>" class="cek-header-expenses">e</a>
 		<!-- <div class="cek-header"></div> -->
 	</div>
 	<!-- <br><br> -->

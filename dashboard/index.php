@@ -29,4 +29,5 @@
             }
         ?>
     </div>
+    <a href="">Join Tricont</a>
 </div>

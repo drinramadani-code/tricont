@@ -26,7 +26,15 @@
                 if (isset($_GET['c'])) {
                     include 'dashboard/expenses/single.php';
                 } else {
-                    include 'dashboard/index.php';
+                    if (isset($_GET['b'])) {
+                        include 'dashboard/expenses/balance.php';
+                    } else {
+                        if (isset($_GET['j'])) {
+                            include 'dashboard/join.php';
+                        } else {
+                            include 'dashboard/index.php';
+                        }
+                    }
                 }
             }
         }

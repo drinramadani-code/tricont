@@ -1,0 +1,50 @@
+.expense {
+	&-header {
+		background-color: #272727;
+		padding: 10px 20px;
+		display: flex;
+		gap: 50px;
+		align-items: center;
+		justify-content: space-between;
+		
+		a {
+			color: #eee;
+			display: flex;
+			gap: 5px;
+			align-items: center;
+			text-decoration: none;
+		}
+	}
+	&-uheader {
+		background-color: #272727;
+		color: #fff;
+		text-align: center;
+		padding: 0 10px;
+		p {
+			font-weight: bolder;
+			font-size: 30px;
+		}
+		&-w {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+	}
+	&-for {
+		h6 {
+			background-color: black;
+			color: #fff;
+			padding: 10px;
+			margin-bottom: 0;
+		}
+		&-single {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			background-color: #272727;
+			color: #fff;
+			padding: 10px;
+			border-bottom: 1px solid white;
+		}
+	}
+}
