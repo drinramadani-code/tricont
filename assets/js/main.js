@@ -1,4 +1,19 @@
 (function($) {
+
+    $('.cek-header-tcLink').click(function() {
+        // alert();
+        let url = window.location.href;
+        let t = url.split("?t=")[1];
+        let new_url = url.split("?t=")[0] + "?j="+t;
+        navigator.clipboard.writeText(new_url)
+        .then(() => {
+            alert('copied');
+        })
+        .catch(err => {
+            console.error('Error copying text to clipboard:', err);
+        });
+    })
+
     $('.signup-trigger').click(function() {
         $('.auth-container-login, .auth-container-signup').toggleClass('triggered');
     })

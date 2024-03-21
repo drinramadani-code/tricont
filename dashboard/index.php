@@ -29,5 +29,8 @@
             }
         ?>
     </div>
-    <a href="">Join Tricont</a>
+    <div class="dashboard-pluses">
+        <a href="">Join Tricont</a>
+        <a href="dashboard/add_event.php">Add Event</a>
+    </div>
 </div>
