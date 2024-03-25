@@ -10,6 +10,8 @@ endif;
 if ($_POST['form'] == "signup") {
     mysqli_query($conn, "INSERT INTO users(full_name, email, username, password) VALUES ('$full_name', '$email', '$username', '$password'); ");
     $authed = $_SESSION['authed'] = true;
+    $all_users_q = mysqli_query($conn, "SELECT * FROM users WHERE username='$username' AND password='$password'; ");
+    $user = $_SESSION['user'] = mysqli_fetch_assoc($all_users_q);
 } else {
     $query = mysqli_query($conn, "SELECT * FROM users WHERE username='$username' AND password='$password'; ");
     if (mysqli_num_rows($query) > 0) {

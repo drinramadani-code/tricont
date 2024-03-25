@@ -239,16 +239,132 @@
             color: #FFF;
             font-weight: 500;
         }
+        position: relative;
+        z-index: 1;
     }
     form {
         background-color: #000;
+        padding: 20px;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        padding-top: 70px;
+        label {
+            display: flex;
+            width: 100%;
+            color: #fff;
+            display: flex;
+            align-items: center;
+        }
         input {
             display: block;
             width: 100% !important;
+            margin: 10px 0;
             // margin: 10px 0;
             &.hidden_field {
                 display: none;
             }
+        }
+        div {
+            // background-color: yellow;
+            margin: 10px 0;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            label {
+                flex: 1;
+                color: #9ec0e4;
+                font-size: 17px;
+            }
+            input {
+                // width: fit-content !important;
+                margin-left: auto;
+                margin-right: 0;
+                margin: 0;
+                width: 20px !important;
+                aspect-ratio: 1/1;
+            }
+        }
+        button {
+            display: block;
+            width: 100%;
+            border: none;
+            background-color: #86A1BD;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            padding: 10px;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.add_event {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #242424;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    form {
+        width: 60%;
+        height: fit-content;
+        aspect-ratio: 1/1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+        border-radius: 50px;
+        background-color: rgba($color: #fff, $alpha: .6);
+        padding: 20px 50px;
+    
+        h3 {
+            font-size: 40px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: #9ec0e4;
+            font-family: sans-serif;
+        }
+        input {
+            width: 100%;
+            font-family: 'Inter';
+            border: none;
+
+            &.hidden_field {
+                display: none;
+            }
+    
+            &[type="text"],
+            &[type="password"],
+            &[type="email"] {
+                background-color: transparent;
+                border-bottom: 2px solid #9ec0e4;
+                outline: none !important;
+            }
+    
+            &[type="submit"] {
+                padding: 10px 0;
+                font-size: 16px;
+                text-transform: uppercase;
+                background-color: #9ec0e4;
+                color: #fff;
+                border: 1px solid #9ec0e4;
+                transition: .3s all ease-in-out;
+                font-weight: 600;
+    
+                &:hover {
+                    background-color: #fff;
+                    color: 9ec0e4;
+                }
+            }
+    
         }
     }
 }

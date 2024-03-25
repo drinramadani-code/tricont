@@ -24,7 +24,7 @@ $amount_per = $amount / count(explode(",", $expense['for_whom']));
 		<?php foreach (explode(",", $expense['for_whom']) as $p): ?>
 			<div class="expense-for-single">
 				<div class="expense-for-single-left"><?php echo explode(" ", getUser($p)['full_name'])[0]; ?> <?php echo (getUser($p)['id'] == $_SESSION['user']['id']) ? '(me)' : ''; ?></div>
-				<div class="expense-for-single-right"><?php echo $amount_per; ?>€</div>
+				<div class="expense-for-single-right"><?php echo number_format((float)$amount_per, 2, '.', ''); ?>€</div>
 			</div>
 		<?php endforeach; ?>
 	</div>

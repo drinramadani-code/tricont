@@ -43,7 +43,7 @@ function findElementById($array, $id) {
 			<div class="cek-header-right-participants"><?php echo $participantst; ?></div>
 		</div>
 		<a onclick="$(this).toggleClass('show_balance');jQuery('.cek-body').toggleClass('show_balance');" class="cek-header-expenses"><i class="fa fa-scale-balanced"></i></a>
-		<a class="cek-header-tcLink"><i class="fa fa-paperclip"></i></a>
+		<a class="cek-header-tcLink" jl="http://localhost/tricont/j/?sk=<?php echo $cek['event_sk']; ?>"><i class="fa fa-paperclip"></i></a>
 	</div>
 	<div class="cek-body">
 		<div class="cek-body-expenses">
@@ -80,7 +80,19 @@ function findElementById($array, $id) {
 				if (in_array($j, $d)) {
 					continue;
 				} else {
-					echo getUser($j)['full_name'] . " owes " . getUser($p->id)['full_name'] . " " . $o*-1 . "&euro;" . "<br />";
+					if ($o != 0) {
+						if ($o*-1 < 0) {
+							$n1 = getUser($p->id)['full_name'];
+							$n2 = getUser($j)['full_name'];
+							$fp = $o;
+						} else {
+							$n1 = getUser($j)['full_name'];
+							$n2 = getUser($p->id)['full_name'];
+							$fp = $o*-1;
+						}
+						echo $n1 . " owes " . $n2 . " " . number_format((float)$fp, 2, '.', '') . "&euro;" . "<br />";
+					}
+					
 				}
 			}
 			array_push($d, $p->id);

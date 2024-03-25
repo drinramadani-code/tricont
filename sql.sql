@@ -19,10 +19,11 @@ CREATE TABLE events (
     event_name VARCHAR(256) NOT NULL,
     event_items VARCHAR(256) NOT NULL,
     event_participants VARCHAR(256) NOT NULL,
-    event_leader INT(11) NOT NULL
+    event_leader INT(11) NOT NULL,
+    event_sk VARCHAR(256) NOT NULL,
 );
 
-INSERT INTO events (event_name, event_items, event_participants, event_leader) VALUES ('Udhetimi ne Shqiperi', ' ', '2, 3', '2');
+INSERT INTO events (event_name, event_items, event_participants, event_leader, event_sk) VALUES ('Udhetimi ne Shqiperi', ' ', '2, 3', '2', '222');
 
 
 CREATE TABLE cek (
@@ -57,3 +58,8 @@ CREATE TABLE owes (
 );
 
 INSERT INTO events (event_name, event_items, event_participants, event_leader) VALUES ('Daily Trip ne Shkup', ' ', '2, 4, 5', '2');
+
+CREATE TABLE invite_links (
+    event_id INT(11) NOT NULL,
+    event_sk VARCHAR(256) NOT NULL
+);

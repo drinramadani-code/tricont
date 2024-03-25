@@ -30,7 +30,6 @@
         ?>
     </div>
     <div class="dashboard-pluses">
-        <a href="">Join Tricont</a>
-        <a href="dashboard/add_event.php">Add Event</a>
+        <a href="dashboard/create_event_form.php">Create Event</a>
     </div>
 </div>

@@ -15,8 +15,8 @@ $user = $_SESSION['user'];
 		<input type="text" value="<?php echo $_GET['t']; ?>" name="cek_id" class="hidden_field"/>
 		<input type="text" value="<?php echo $user['id']; ?>" name="paid_by"  class="hidden_field"/>
 		<input type="text" placeholder="Title" name="title" />
-		<input type="text" placeholder="Amount" name="amount" />€
 		<input type="date" placeholder="Date" name="date" />
+		<input type="text" placeholder="Amount(€)" name="amount" />
 		<!-- <select name="for_who" id=""> -->
 		<?php  
 			foreach (explode(", ", $cek['event_participants']) as $i=>$p) {
