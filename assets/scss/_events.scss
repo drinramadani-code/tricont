@@ -133,8 +133,9 @@
             padding: 3px;
             background-color: #fff;
             img {
-                width: 100px;
-                aspect-ratio: 1/1;
+                width: 70px;
+                height: 110px;
+                // aspect-ratio: 1/1;
                 object-fit: contain;
             }
         }
@@ -195,6 +196,7 @@
                 transition: .3s all ease-in-out;
                 padding: 20px 5px;
                 background-color: #0B396B;
+                margin-bottom: 0;
                 &:hover {
                     background-color: #2081EA;
                 }
