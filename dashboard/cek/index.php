@@ -36,14 +36,16 @@ function findElementById($array, $id) {
 ?>
 <div class="cek">
 	<div class="cek-header">
-		<a class="cek-header-left" href="<?php echo $permalink; ?>"><i class="fa-solid fa-angle-left"></i></a>
-
+		<!-- <a class="cek-header-left" href="<?php // echo $permalink; ?>"><i class="fa-solid fa-angle-left"></i></a> -->
+<a href="<?php echo $_SESSION['permalink']; ?>" class="cek-header-left"><img src="assets/images/logo.png" alt=""></a>
 		<div class="cek-header-right">
 			<div class="cek-header-right-name"><?php echo $cek['event_name']; ?> </div>
 			<div class="cek-header-right-participants"><?php echo $participantst; ?></div>
 		</div>
+
+		<a class="cek-header-tcLink" jl="http://localhost:8080/tricont/j/?sk=<?php echo $cek['event_sk']; ?>"><i class="fa fa-paperclip"></i></a>
 		<a onclick="$(this).toggleClass('show_balance');jQuery('.cek-body').toggleClass('show_balance');" class="cek-header-expenses"><i class="fa fa-scale-balanced"></i></a>
-		<a class="cek-header-tcLink" jl="http://localhost/tricont/j/?sk=<?php echo $cek['event_sk']; ?>"><i class="fa fa-paperclip"></i></a>
+		
 	</div>
 	<div class="cek-body">
 		<div class="cek-body-expenses">
@@ -54,7 +56,7 @@ function findElementById($array, $id) {
 			<a class="cek-body-single" href="<?php echo $permalink; ?>?c=<?php echo $expense['id']; ?>">
 				<div class="cek-body-single-left">
 					<div class="cek-body-single-left-title"><?php echo $expense['title'] ?></div>
-					<div class="cek-body-single-left-paid-by">paid by &mdash; <span><?php echo explode(" ", getUser($expense['paid_by'])['full_name'])[0]; ?></span></div>
+					<div class="cek-body-single-left-paid-by">paguar nga &mdash; <span><?php echo explode(" ", getUser($expense['paid_by'])['full_name'])[0]; ?></span></div>
 				</div>
 				<div class="cek-body-single-right">
 					<div class="cek-body-single-right-price"><?php echo $expense['amount'] ?>€</div>
@@ -90,7 +92,7 @@ function findElementById($array, $id) {
 							$n2 = getUser($p->id)['full_name'];
 							$fp = $o*-1;
 						}
-						echo $n1 . " owes " . $n2 . " " . number_format((float)$fp, 2, '.', '') . "&euro;" . "<br />";
+						echo "<p>" . $n1 . " ka borxh " . $n2 . " " . number_format((float)$fp, 2, '.', '') . "&euro;" . "</p>";
 					}
 					
 				}
@@ -99,14 +101,17 @@ function findElementById($array, $id) {
 		} ?>
 		</div>
 	</div>
+	<div class="cek-links">
+		
+	</div>
 	<div class="cek-footer">
 		<div class="cek-footer-my-total">
-			<p class="cek-footer-my-total-gray">My Total</p>
+			<p class="cek-footer-my-total-gray">Totali Im</p>
 			<span class="cek-footer-my-total-amount"><?php echo number_format((float)$my_total, 2, '.', ''); ?>€</span>
 		</div>
 		<div class="cek-footer-plus"><a href="<?php echo $_SESSION['permalink']; ?>?t=<?php echo $_GET['t']; ?>&a">+</a></div>
 		<div class="cek-footer-total-expenses">
-			<p class="cek-footer-total-expenses-gray">TOTAL EXPENSES</p>
+			<p class="cek-footer-total-expenses-gray">Totali i shpenzimeve</p>
 			<span class="cek-footer-total-expenses-amount"><?php echo number_format((float)$total_expenses, 2, '.', ''); ?>€</span>
 		</div>
 	</div>

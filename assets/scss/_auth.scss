@@ -1,9 +1,16 @@
 .auth {
+    &-logo {
+        position: fixed;
+        left: 50%;
+        transform: translate(-50%, 0);
+        top: 50px;
+        width: 250px;
+    }
     &-container {
         display: flex;
         overflow-x: hidden;
         transition: .5s all ease-in-out;
-        background: linear-gradient(180deg, #272727 0%, #272727 100%);
+        // background: linear-gradient(180deg, #272727 0%, #272727 100%);
         &-login, &-signup {
             transition: .5s all ease-in-out;
             min-width: 100vw;   
@@ -23,6 +30,10 @@
                 border-radius: 50px;
                 background-color: rgba($color: #fff, $alpha: .6);
                 padding: 20px 50px;
+
+                .signup-trigger {
+                    cursor: pointer;
+                }
 
                 h3 {
                     font-size: 40px;
@@ -52,7 +63,7 @@
                             transition: .3s all ease-in-out;
                             font-weight: 600;
                             &:hover {
-                                background-color: #fff;
+                                background-color: #0C396C;
                                 color: 9ec0e4;
                             }
                         }
